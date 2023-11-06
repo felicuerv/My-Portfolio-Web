@@ -19,6 +19,7 @@ body{
     background-image: url(../assets/img/fotomia.png);
     background-size: cover;
     background-position: center;
+    z-index: 10;
 }
 .container{
     padding: 10px 10%;
@@ -83,7 +84,7 @@ body{
 
 .header-text .text{
     position: relative;
-    font-size: 60px;
+    font-size: 50px;
     margin-top: 20px;
     color: #EE6C4D ;
 }
@@ -101,6 +102,7 @@ body{
     background-color: #E0FBFC;
     border-left: 2px solid #98C1D9;
     animation: animate 4s steps(12) infinite;
+    z-index: 1;
 }
 @keyframes animate{
     40%, 60%{
