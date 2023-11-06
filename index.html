@@ -6,32 +6,41 @@
     <title>Hi ! i'm Felipe</title>
     <link rel="icon" type="img/png" href="./assets/img/loguito.png">
     <link rel="stylesheet" href="./css/style.css">
-    <script src="https://kit.fontawesome.com/2f6e7b21cb.js" crossorigin="anonymous"></script> 
+    <script src="https://kit.fontawesome.com/2f6e7b21cb.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
+    <header>
+        <nav class="nav">
+            <div class="logo-container">
+                <img src="./assets/img/logo.png" class="logo">
+            </div>
+            
+            <ul id="sidemenu" class="menu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+            
+        </nav>
+    </header>
+    <div class="scrol">
+
+    </div>
     <div id="header">
         <div class="container">
-            <nav>
-                <div class="logo-container">
-                    <img src="./assets/img/logo.png" class="logo">
-                </div>
-                <ul id="sidemenu">
-                    <li><a href="#header">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
-                </ul>
-                <i class="fa-solid fa-bars" onclick="openmenu()"></i>
-            </nav>
             <div class="header-text">
-                <p>FrontEnd Developer</p>
-                <h1>Hi, I'm <span>Felipe</span> Cuervo </h1>
-
+                <span class="text first-text">Hi, I'm </span>
+                <span class="text sec-text">Felipe Cuervo</span>
             </div>
         </div>
-
+        
     </div>
 <!-- ------------------------------------------------------ABOUT------------------------------------------------------- -->
 <div id="about">
@@ -42,7 +51,7 @@
             </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About me</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt debitis nesciunt eos dicta pariatur esse autem, ipsam ut perferendis natus ipsa cupiditate nisi distinctio vitae quae tenetur. Maxime, consequatur facilis?</p>
+                <p>My name is Felipe Cuervo, and I am a young programmer. At the age of 20, I am passionately seeking new challenges that will elevate my skills and experience as a frontend developer. I am dedicated to creating captivating and user-friendly web interfaces, and I thrive on staying up to date with the latest web technologies to deliver exceptional user experiences. I am excited to collaborate with others in the ever-evolving world of web development and bring innovative ideas to life</p>
 
                 <div class="tab-titles">
                     <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
@@ -170,7 +179,7 @@
 </div>
 
 
-
+<script src="menu.js"></script>
 
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
@@ -226,5 +235,29 @@
     })
 </script>
 
+<script>
+    const text = document.querySelector(".sec-text");
+
+    const textLoad = () => {
+        text.classList.add("fade-out");
+        setTimeout(()=>{
+            text.textContent = "Felipe Cuervo";
+            text.classList.remove("fade-out");
+        }, 0);
+        text.classList.add("fade-out");
+        setTimeout(()=>{
+            text.textContent = "Frontend Dev";
+            text.classList.remove("fade-out");
+        }, 4000);
+        text.classList.add("fade-out");
+        setTimeout(()=>{
+            text.textContent = "Web Designer";
+            text.classList.remove("fade-out");
+        }, 8000);
+    }
+
+    textLoad();
+    setInterval(textLoad, 12000);
+</script>
 </body>
 </html>
